@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a visualização em dispositivos móveis -->
+    <title>Fair View - Plataforma de Equidade Salarial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Importa fonte do Google Fonts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Importa a biblioteca Chart.js para gráficos -->
+    <style>
+        /* Estilos para o corpo da página */
+        body {
+            font-family: 'Roboto', sans-serif; /* Define a fonte da página */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Cor de fundo */
+            scroll-behavior: smooth; /* Efeito de rolagem suave */
+        }
+        header {
+            background: #007bff; /* Cor de fundo do cabeçalho */
+            color: white; /* Cor do texto */
+            padding: 15px 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+        }
+        nav {
+            margin: 20px 0; /* Margem superior e inferior */
+        }
+        nav a {
+            margin: 0 15px; /* Margem entre os links */
+            text-decoration: none; /* Remove o sublinhado */
+            color: #007bff; /* Cor do texto */
+            font-weight: bold; /* Texto em negrito */
+        }
+        .container {
+            max-width: 900px; /* Largura máxima do contêiner */
+            margin: 20px auto; /* Centraliza horizontalmente */
+            padding: 20px; /* Espaçamento interno */
+            background: white; /* Cor de fundo do contêiner */
+            border-radius: 5px; /* Cantos arredondados */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor do contêiner */
+        }
+        h1, h2 {
+            color: #333; /* Cor dos títulos */
+        }
+        .section {
+            margin-bottom: 20px; /* Margem inferior entre seções */
+        }
+        .feedback-form, .contact-form {
+            display: flex; /* Flexbox para layout */
+            flex-direction: column; /* Coloca itens em coluna */
+        }
+        .feedback-form textarea, .contact-form input {
+            margin-bottom: 10px; /* Margem inferior dos campos */
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #ccc; /* Borda cinza */
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        footer {
+            text-align: center; /* Centraliza o texto do rodapé */
+            padding: 10px 0; /* Espaçamento interno do rodapé */
+            background: #007bff; /* Cor de fundo do rodapé */
+            color: white; /* Cor do texto */
+        }
+        .chart-container {
+            display: flex; /* Flexbox para gráficos */
+            justify-content: space-between; /* Espaça os gráficos */
+            margin: 20px 0; /* Margem superior e inferior */
+        }
+        .chart {
+            width: 40%; /* Largura dos gráficos */
+            height: 150px; /* Altura dos gráficos */
+        }
+        .company-info, .why-choose {
+            margin: 20px 0; /* Margem superior e inferior */
+            padding: 15px; /* Espaçamento interno */
+            background: #e9ecef; /* Cor de fundo */
+            border-radius: 5px; /* Cantos arredondados */
+        }
+        .data-point {
+            display: flex; /* Flexbox para pontos de dados */
+            align-items: center; /* Alinha itens no centro verticalmente */
+            margin-bottom: 10px; /* Margem inferior */
+        }
+        .data-point div {
+            width: 30px; /* Largura do ponto de dados */
+            height: 30px; /* Altura do ponto de dados */
+            border-radius: 50%; /* Forma circular */
+            margin-right: 10px; /* Margem à direita */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fair View</h1> <!-- Título principal -->
+</header>
+
+<nav>
+    <a href="#sobre-nos">Sobre Nós</a>
+    <a href="#diferencial">Diferencial</a>
+    <a href="#why-choose">Por que nos escolher</a>
+    <a href="#graficos">Resultados</a>
+    <a href="#feedback">Feedback</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<div class="container">
+    <div class="section" id="sobre-nos">
+        <h2>Sobre Nós</h2>
+        <p>A Fair View é uma plataforma inovadora que une dados salariais, desempenho e feedback de funcionários, promovendo equidade e satisfação no ambiente de trabalho.</p>
+    </div>
+
+    <div class="section" id="diferencial">
+        <h2>Nossos Diferenciais</h2>
+        <p>Oferecemos um painel interativo que facilita a identificação de disparidades e a tomada de decisões informadas para promover um ambiente mais justo.</p>
+    </div>
+
+    <div class="section" id="why-choose">
+        <h2>Por que nos escolher?</h2>
+        <p>Aqui estão alguns motivos para optar pela Fair View em vez de consultorias tradicionais:</p>
+        
+        <div class="why-choose">
+            <div class="data-point">
+                <div style="background-color: #36a2eb;"></div>
+                <p>Acesso em tempo real aos dados</p>
+            </div>
+            <div class="data-point">
+                <div style="background-color: #ff6384;"></div>
+                <p>Feedback anônimo para funcionários</p>
+            </div>
+            <div class="data-point">
+                <div style="background-color: #ffce56;"></div>
+                <p>Relatórios personalizados e insights rápidos</p>
+            </div>
+            <div class="data-point">
+                <div style="background-color: #4bc0c0;"></div>
+                <p>Custos reduzidos em comparação com consultorias</p>
+            </div>
+            <div class="data-point">
+                <div style="background-color: #9966ff;"></div>
+                <p>Foco em equidade e satisfação no trabalho</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="graficos">
+        <h2>Resultados</h2>
+        <p>Abaixo estão os resultados que ajudamos a alcançar para as empresas que utilizam nossa plataforma:</p>
+        
+        <div class="company-info">
+            <h3>Nome da Empresa: XYZ Ltda</h3>
+            <img src="logo-placeholder.png" alt="Logo da Empresa" style="width: 150px; height: auto;">
+            <p>Salário Médio Antes: R$ 3000</p>
+            <p>Salário Médio Depois: R$ 4500</p>
+            <p>Nível de Satisfação: 85%</p>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="salaryChart"></canvas> <!-- Área do gráfico de salários -->
+                <p style="text-align: center;">Salário Médio</p>
+            </div>
+            <div class="chart">
+                <canvas id="satisfactionChart"></canvas> <!-- Área do gráfico de satisfação -->
+                <p style="text-align: center;">Satisfação dos Funcionários</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="feedback">
+        <h2>Feedback Anônimo</h2>
+        <p>Funcionários podem enviar feedbacks anônimos sobre a empresa e seus salários:</p>
+        <form class="feedback-form" id="feedbackForm">
+            <textarea rows="4" id="feedbackMessage" placeholder="Sua Mensagem (anônima)" required></textarea>
+            <button type="submit">Enviar Feedback</button>
+        </form>
+        <p id="feedbackResponse" style="color: green; display: none;"></p>
+    </div>
+
+    <div class="section" id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações:</p>
+        <form class="contact-form" id="contactForm">
+            <input type="text" id="name" placeholder="Seu Nome" required>
+            <input type="email" id="email" placeholder="Seu Email" required>
+            <textarea rows="4" id="message" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="formResponse" style="color: green; display: none;"></p>
+    </div>
+</div>
+
+<footer
+<p> &copy; 2024 Fair View</p> <!-- Texto do rodapé -->
+</footer>
+
+<script>
+    // Gráfico de salários
+    const ctxSalary = document.getElementById('salaryChart').getContext('2d'); // Seleciona o elemento do gráfico
+    const salaryChart = new Chart(ctxSalary, {
+        type: 'bar', // Tipo de gráfico (barras)
+        data: {
+            labels: ['Antes', 'Depois'], // Rótulos para o eixo X
+            datasets: [{
+                label: 'Salário Médio', // Nome da série de dados
+                data: [3000, 4500], // Dados do gráfico
+                backgroundColor: ['#ff6384', '#36a2eb'], // Cores das barras
+                borderWidth: 1 // Largura da borda
+            }]
+        },
+        options: {
+            responsive: true, // Gráfico responsivo
+            maintainAspectRatio: false, // Mantém a proporção
+            scales: {
+                y: {
+                    beginAtZero: true, // Começa o eixo Y do zero
+                    ticks: {
+                        callback: function(value) {
+                            return 'R$ ' + value; // Formata os valores no eixo Y
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfico de satisfação
+    const ctxSatisfaction = document.getElementById('satisfactionChart').getContext('2d'); // Seleciona o elemento do gráfico
+    const satisfactionChart = new Chart(ctxSatisfaction, {
+        type: 'doughnut', // Tipo de gráfico (pizza)
+        data: {
+            labels: ['Satisfeitos', 'Insatisfeitos'], // Rótulos para o gráfico
+            datasets: [{
+                label: 'Satisfação dos Funcionários', // Nome da série de dados
+                data: [85, 15], // Dados do gráfico
+                backgroundColor: ['#36a2eb', '#ff6384'], // Cores das fatias
+                borderWidth: 1 // Largura da borda
+            }]
+        },
+        options: {
+            responsive: true, // Gráfico responsivo
+            maintainAspectRatio: false, // Mantém a proporção
+            plugins: {
+                legend: {
+                    display: true, // Exibe a legenda
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
